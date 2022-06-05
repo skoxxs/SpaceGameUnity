@@ -5,14 +5,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private CanvasControler canvasControler;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
   
     public void GameWin()
     {
@@ -22,9 +14,7 @@ public class GameManager : MonoBehaviour
 
     public void CloseAPK()
     {
-        
         Application.Quit();
-        Debug.Log("Game is exiting");
     }
 
     public void PlayerDie()

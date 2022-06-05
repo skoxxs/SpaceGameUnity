@@ -12,16 +12,9 @@ public class EnemyAIAddFire : EnemyAI
 
     private float timer = 0;
 
-    // Start is called before the first frame update
-    protected new void Start()
+    protected new void Update()
     {
-        base.Start();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        base.UpdateMove();
+        base.Update();
         if (isActive)
         {
 

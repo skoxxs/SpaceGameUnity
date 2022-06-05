@@ -7,7 +7,6 @@ public class UIheals : MonoBehaviour
     [SerializeField] private GameObject[] lives;
     [SerializeField] private LivePlayer _livePlayer;
 
-    // Start is called before the first frame update
     void Start()
     {
         Updatelives();

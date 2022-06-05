@@ -7,17 +7,11 @@ public class TimeToDestroy : MonoBehaviour
     [SerializeField] private float timeToDestroy = 10;
 
     private float curentTime = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
+        curentTime += Time.deltaTime;
         if (curentTime > timeToDestroy)
             Destroy(this.gameObject);
-        curentTime += Time.deltaTime;
     }
 }

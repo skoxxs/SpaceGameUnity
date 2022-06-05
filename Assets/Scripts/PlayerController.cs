@@ -5,14 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5.0f;
-
     [SerializeField] private DynamicJoystick dynamicJoystick;
-
     [SerializeField] private float reangMoveX = 10.0f;
 
     private Rigidbody rbPlayer;
     private Transform _transform;
-    // Start is called before the first frame update
     void Start()
     {
         rbPlayer = GetComponent<Rigidbody>();
@@ -20,8 +17,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private Vector3 offSet;
-    //private Vector3 vectorJoystick;
-    // Update is called once per frame
+
     void Update()
     {
         if(dynamicJoystick != null)
@@ -48,9 +44,6 @@ public class PlayerController : MonoBehaviour
         
         offSet = new Vector3(Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime, 0, 0);
         rbPlayer.MovePosition(rbPlayer.position + offSet);
-
-       
-       
 
     }
 }

@@ -19,8 +19,6 @@ public class CanvasControler : MonoBehaviour
 
     [SerializeField] private UnityEvent StartGame;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         levelText.text = "Level: " + PlayerPrefs.GetInt("level",0);
@@ -39,8 +37,6 @@ public class CanvasControler : MonoBehaviour
 
     public void SelectMainMenuPanel()
     {
-        resetAllPanels();
-        mainMenu.SetActive(true);
         SceneManager.LoadScene(0);
     }
 

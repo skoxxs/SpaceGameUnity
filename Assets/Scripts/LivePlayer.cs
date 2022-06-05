@@ -6,18 +6,12 @@ using UnityEngine.Events;
 public class LivePlayer : MonoBehaviour
 {
     [SerializeField] private int lives = 3;
-    //[SerializeField] private int maxLives = 5;
     [SerializeField] private GameObject explosion;
 
     [SerializeField] private GameManager gameManager;
 
     [SerializeField] UnityEvent livesCheng;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+  
     public int GetLives()
     {
         return lives;

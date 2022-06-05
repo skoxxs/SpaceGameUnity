@@ -9,10 +9,8 @@ public class RocketDestroyOnCollisionEnemy : RocketDestroyOnCollision
  
     private new void OnCollisionEnter(Collision collision)
     {
-        //boom
         Instantiate(explosion,transform.position, explosion.transform.rotation);
         base.OnCollisionEnter(collision);
-
-            
+    
     }
 }

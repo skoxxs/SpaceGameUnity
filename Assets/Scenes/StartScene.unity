@@ -1073,7 +1073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabEnemy:
-  - {fileID: 8296091454007252448, guid: cc8d96e845e688d4bb49e3ad8a7399d1, type: 3}
+  - {fileID: 6448148640173582595, guid: 756e722737f450d49aa2fa1ad8368c26, type: 3}
   - {fileID: 6448148640173582595, guid: 756e722737f450d49aa2fa1ad8368c26, type: 3}
   - {fileID: 6551067715717021600, guid: 27cdf6bb54929754b8926586a85101a5, type: 3}
   - {fileID: 2905180657764035943, guid: 5d56ba6097d5a524d810c68aa2ef161d, type: 3}
@@ -1082,7 +1082,7 @@ MonoBehaviour:
   spaseX: 40
   spaseY: 45
   rotSpawn: {x: 0, y: 1, z: 0, w: -0.00000004371139}
-  framework: {fileID: 909210901}
+  gameFild: {fileID: 909210901}
 --- !u!4 &376428285
 Transform:
   m_ObjectHideFlags: 0

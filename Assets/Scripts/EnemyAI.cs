@@ -5,54 +5,47 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField] private GameObject explosion;
-    [SerializeField] private GameObject parentObjToDell;
-    private Rigidbody rbEnemy;
     [SerializeField] private float moveSpeedZ = 50.0f;
     [SerializeField] private float moveSpeedX = 50.0f;
 
 
     protected bool isActive = false;
     private EnemyAIControl enemyAIControl;
-    private Framework framework;
+    private GameFild gameFild;
+    private Rigidbody rbEnemy;
     private bool isLive = true;
-    // Start is called before the first frame update
-    protected void Start()
+
+    void Start()
     {
         rbEnemy = GetComponent<Rigidbody>();
         if (Random.Range(0, 2) == 1) moveSpeedX *= -1;
         enemyAIControl = GameObject.FindGameObjectWithTag("EnemyAIControl").GetComponent<EnemyAIControl>();
     }
 
-    public void SetFramework(Framework _framework)
+    public void SetGameFild(GameFild _gameFild)
     {
-        framework = _framework;
+        this.gameFild = _gameFild;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        UpdateMove();
-    }
-
-    protected void UpdateMove()
+    protected void Update()
     {
         if (isActive)
         {
-            if (transform.position.x < framework.MinX)
+            if (transform.position.x < gameFild.MinX)
                 if (moveSpeedX < 0) moveSpeedX *= -1;
 
-            if (transform.position.x > framework.MaxX)
+            if (transform.position.x > gameFild.MaxX)
                 if (moveSpeedX > 0) moveSpeedX *= -1;
 
-            if (transform.position.z < framework.MinZ)
+            if (transform.position.z < gameFild.MinZ)
             {
                 if (Random.Range(0, 2) == 1)
                 {
-                    transform.position = framework.pointSpavn1.transform.position;
+                    transform.position = gameFild.pointSpavn1.transform.position;
                 }
                 else
                 {
-                    transform.position = framework.pointSpavn2.transform.position;
+                    transform.position = gameFild.pointSpavn2.transform.position;
                 }
             }
 
@@ -60,8 +53,6 @@ public class EnemyAI : MonoBehaviour
             rbEnemy.MovePosition(rbEnemy.position + offSet);
         }
     }
-
-
 
     public void StartMove()
     {
@@ -92,6 +83,6 @@ public class EnemyAI : MonoBehaviour
             Instantiate(explosion, this.transform.position, explosion.transform.rotation);
             isLive = false;
         }
-        Destroy(parentObjToDell);
+        Destroy(this.gameObject);
     }
 }
